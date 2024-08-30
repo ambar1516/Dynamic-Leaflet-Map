@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diasaster Management Map </title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 500px;
+            width: 100%;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Dynamic Map</h1>
+    <div id="map"></div>
+
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map and set its view
+        const map = L.map('map').setView([51.505, -0.09], 13);
+
+        // Load and display tile layer on the map
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        // Define different custom icons
+        const icon1 = L.icon({
+            iconUrl:  'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/mountains.png', // URL to the first icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
+        const icon2 = L.icon({
+            iconUrl: 'https://www.vanuatubeachbar.com/wp-content/uploads/leaflet-maps-marker-icons/forest2.png', // URL to the second icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        });
+
+        const icon3 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/swimming2.png', //url to the third icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+
+        })
+
+        const icon4 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/swimming2.png', //url to the fourth icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon5 = L.icon({
+            iconUrl: 'https://www.vanuatubeachbar.com/wp-content/uploads/leaflet-maps-marker-icons/forest2.png', //url to the 5th icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon6 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/mountains.png', //url to the 6th icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon7 = L.icon({
+            iconUrl: 'https://www.vanuatubeachbar.com/wp-content/uploads/leaflet-maps-marker-icons/caution.png', //url to the 7th icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon8 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/mountains.png', //url to the 8th icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon9 = L.icon({
+            iconUrl: 'https://www.vanuatubeachbar.com/wp-content/uploads/leaflet-maps-marker-icons/caution.png', //url to the 9th icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon10 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/swimming2.png', //url to the 10th icon
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon11 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/home.png', //url to the 11th icon for SHELTER
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon12 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/home.png', //url to the 12th icon for SHELTER
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+        const icon13 = L.icon({
+            iconUrl: 'https://www.winsorfireform.com/wp-content/uploads/leaflet-maps-marker-icons/home.png', //url to the 13th icon for SHELTER
+            iconSize: [32, 32],
+            iconAnchor: [16, 32],
+            popupAnchor: [0, -32]
+        })
+
+
+
+
+        // Add markers with different icons
+        L.marker([30.2863, 78.9804], { icon: icon1 }).addTo(map)
+            .bindPopup('<b> Rudraprayag: LandSlide</b> ')
+            .openPopup();
+
+        L.marker([30.4598, 78.0662], { icon: icon2 }).addTo(map)
+            .bindPopup('<b>Mussoorie: Forest Fire </b> ')
+            .openPopup();
+
+        L.marker([29.9457, 78.1642], { icon: icon3 }).addTo(map)
+            .bindPopup('<b>Haridwar: Flood </b> ')
+            .openPopup();
+
+        L.marker([30.1465, 78.5981], { icon: icon4 }).addTo(map)
+            .bindPopup('<b>Devprayag: Flood </b> ')
+            .openPopup();
+
+        L.marker([30.1526, 78.7796], { icon: icon5 }).addTo(map)
+            .bindPopup('<b>Pauri Garhwal: Forest Fire</b>')
+            .openPopup();
+
+        L.marker([30.4046, 79.3186], { icon: icon6 }).addTo(map)
+            .bindPopup('<b>Gopeshwar: LandSlide</b> ')
+            .openPopup();
+
+        L.marker([30.7290, 78.4435], { icon: icon7 }).addTo(map)
+            .bindPopup('<b>Uttarkashi: EarthQuake</b> ')
+            .openPopup();
+
+        L.marker([29.5852, 80.2091], { icon: icon8 }).addTo(map)
+            .bindPopup('<b>Pithoragarh: LandSlide</b> ')
+            .openPopup();
+
+        L.marker([30.7352, 79.0669], { icon: icon9 }).addTo(map)
+            .bindPopup('<b>Kedarnath: EarthQuake</b> ')
+            .openPopup();
+
+        L.marker([30.3894, 78.4805], { icon: icon10 }).addTo(map)
+            .bindPopup('<b>Tehri: Flood</b> ')
+            .openPopup();
+
+        L.marker([30.3165, 78.0322], { icon: icon11 }).addTo(map)
+            .bindPopup('<b>Dehradun: Shelter</b> ')
+            .openPopup();
+
+        L.marker([29.3799, 79.4549], { icon: icon12 }).addTo(map)
+            .bindPopup('<b>Nainital: Shelter</b> ')
+            .openPopup();
+
+        L.marker([29.5966, 79.4323], { icon: icon13 }).addTo(map)
+            .bindPopup('<b>Almora: Shelter</b> ')
+            .openPopup();
+
+        
+
+    </script>
+</body>
+
+</html>
